@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gửi Mai Anh 💗</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #713d50;
+  background: linear-gradient(145deg,#fff1f4,#fce0e8,#fff7f0);
+  display: flex; justify-content: center; align-items: center;
+  overflow-x: hidden;
+  overflow-y: auto; /* Cho phép cuộn nếu thư dài */
+}
+.card {
+  width: min(92%, 430px); text-align: center;
+  padding: 32px 23px; margin: 25px 0;
+  border: 1px solid #f3c6d2; border-radius: 25px;
+  background: rgba(255,255,255,.78);
+  box-shadow: 0 15px 50px #b85e7a20;
+  position: relative;
+  z-index: 5; /* Để thiệp nổi lên trên hoa */
+}
+.small { letter-spacing: 3px; font-size: 11px; color: #bd718c; }
+h1 { font-size: 34px; font-weight: normal; margin: 15px 0; }
+p { line-height: 1.85; font-size: 16px; }
+.envelope {
+  position: relative; width: 210px; height: 145px;
+  margin: 35px auto 25px; cursor: pointer;
+  background: #eaa5b9; border-radius: 5px;
+  box-shadow: 0 9px 20px #a64f6c25;
+}
+.envelope:before {
+  content: ""; position: absolute; inset: 0;
+  background: #f4c4d1;
+  clip-path: polygon(0 0,50% 58%,100% 0);
+  z-index: 3; transition: transform .7s;
+  transform-origin: top;
+}
+.envelope:after {
+  content: "♥"; position: absolute; z-index: 4;
+  top: 48px; left: calc(50% - 16px);
+  font-size: 31px; color: #b94f70;
+}
+.envelope.open:before {
+  transform: rotateX(180deg); z-index: 0;
+}
+.envelope-label {
+  position: absolute; bottom: 12px; width: 100%;
+  font-size: 15px; color: #78394f; z-index: 2;
+}
+button {
+  border: 0; border-radius: 30px; padding: 13px 23px;
+  background: #c96383; color: white; font-size: 14px;
+  cursor: pointer; margin: 7px;
+}
+button:active { transform: scale(.97); }
+#letter { display: none; animation: appear 1s ease; }
+#letter.show { display: block; }
+.heart { color: #d96f90; font-size: 24px; }
+.signature { font-style: italic; color: #b65375; }
+.music { background: #f7e2e9; color: #984d68; }
+.footer { font-size: 11px; color: #bd8a9b; margin-top: 24px; }
+
+/* CSS cho cánh hoa rơi từ trên xuống */
+.petal {
+  position: fixed; top: -25px; pointer-events: none;
+  animation: fall linear forwards; z-index: 10;
+}
+
+/* CSS cho hoa nhảy từ dưới lên */
+.spring-flower {
+  position: fixed; 
+  bottom: -50px; /* Bắt đầu mọc từ dưới màn hình */
+  pointer-events: none;
+  z-index: 15;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(540deg); opacity: .2; }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hiệu ứng nhảy lên như lò xo */
+@keyframes springUp {
+  0% { transform: translateY(50px) scale(0); opacity: 0; }
+  60% { transform: translateY(-80px) scale(1.3); opacity: 1; }
+  80% { transform: translateY(-50px) scale(0.9); opacity: 1; }
+  100% { transform: translateY(-60px) scale(1); opacity: 1; }
+}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="small">A LITTLE MESSAGE FOR YOU</div>
+  <div class="heart">♡</div>
+  <h1>Mai Anh</h1>
+  <p>Mình có một điều nhỏ xíu muốn gửi đến cậu...</p>
+
+  <div class="envelope" id="envelope" role="button"
+       tabindex="0" aria-label="Mở thư">
+    <div class="envelope-label">Gửi Mai Anh ♡</div>
+  </div>
+
+  <button id="openBtn" onclick="openLetter()">
+    Chạm để mở thư 💌
+  </button>
+
+  <section id="letter">
+    <div class="heart">🌷</div>
+    <p class="small">NGÀY 21 THÁNG 10</p>
+    <h1>Gửi cô gái của mình</h1>
+
+    <p>
+      Mai Anh à, 💗
+    </p>
+    <p>
+      Nhân ngày đặc biệt này, mình chúc cậu
+      luôn xinh đẹp, vui vẻ và bình yên.
+      Mong rằng mỗi ngày của cậu đều có thật
+      nhiều điều dễ thương, những nụ cười
+      thật tươi và những niềm vui bất ngờ.
+    </p>
+    <p>
+      Cảm ơn cậu vì đã xuất hiện trong cuộc sống
+      của mình. Mong cậu luôn được yêu thương,
+      được trân trọng và có thật nhiều lý do
+      để hạnh phúc.
+    </p>
+    <p>
+      Nếu hôm nay cậu nhận được một lời chúc,
+      thì hãy nhớ rằng có một người đang
+      mong cậu luôn vui vẻ và mỉm cười. ❤️
+    </p>
+
+    <p class="signature">
+      Chúc Mai Anh một ngày thật dịu dàng nhé!
+    </p>
+    <div class="heart">♡ ♡ ♡</div>
+    <button class="music" onclick="toggleMusic()" id="musicBtn">
+      ♫ Bật nhạc tình yêu
+    </button>
+    <p class="footer">Một chút yêu thương, dành riêng cho Mai Anh.</p>
+  </section>
+</main>
+
+<script>
+const envelope = document.getElementById("envelope");
+const letter = document.getElementById("letter");
+let opened = false;
+let audioCtx = null;
+let musicOn = false;
+let timer = null;
+let noteIndex = 0;
+
+// Giai điệu êm dịu được tạo trực tiếp trên trang
+const melody = [
+  392, 440, 523, 440, 392, 330, 349, 392,
+  440, 523, 587, 523, 440, 392, 349, 330,
+  392, 440, 523, 659, 587, 523, 440, 392,
+  349, 392, 440, 392, 330, 349, 392, 330
+];
+
+function playNote(freq, start, duration, volume) {
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  osc.type = "sine";
+  osc.frequency.value = freq;
+  gain.gain.setValueAtTime(0.001, start);
+  gain.gain.exponentialRampToValueAtTime(volume, start + 0.06);
+  gain.gain.exponentialRampToValueAtTime(0.001, start + duration);
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start(start);
+  osc.stop(start + duration + 0.03);
+}
+
+function musicStep() {
+  if (!musicOn || !audioCtx) return;
+  const now = audioCtx.currentTime;
+  const freq = melody[noteIndex % melody.length];
+  playNote(freq, now, 0.65, 0.12);
+
+  // Nốt đệm tạo cảm giác êm dịu
+  if (noteIndex % 4 === 0) {
+    playNote(freq / 2, now, 1.1, 0.045);
+  }
+  noteIndex++;
+}
+
+async function toggleMusic() {
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext ||
+                    window.webkitAudioContext)();
+  }
+  if (audioCtx.state === "suspended") await audioCtx.resume();
+
+  musicOn = !musicOn;
+  const btn = document.getElementById("musicBtn");
+
+  if (musicOn) {
+    musicStep();
+    timer = setInterval(musicStep, 480);
+    btn.textContent = "♫ Tắt nhạc";
+  } else {
+    clearInterval(timer);
+    btn.textContent = "♫ Bật nhạc tình yêu";
+  }
+}
+
+function openLetter() {
+  if (opened) return;
+  opened = true;
+  envelope.classList.add("open");
+  letter.classList.add("show");
+  document.getElementById("openBtn").style.display = "none";
+  document.querySelector(".card > p").style.display = "none";
+
+  // Tạo cánh hoa rơi từ trên xuống
+  for (let i = 0; i < 25; i++) {
+    setTimeout(createPetal, i * 130);
+  }
+  
+  // Tạo các cây hoa nhảy (mọc) từ dưới lên
+  for (let j = 0; j < 18; j++) {
+    setTimeout(createSpringFlower, j * 180);
+  }
+}
+
+envelope.addEventListener("click", openLetter);
+envelope.addEventListener("keydown", e => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    openLetter();
+  }
+});
+
+// Hàm tạo cánh hoa rơi từ trên xuống
+function createPetal() {
+  const el = document.createElement("div");
+  el.className = "petal";
+  el.textContent = ["♡", "♥", "🌸", "💕"][
+    Math.floor(Math.random() * 4)
+  ];
+  el.style.left = Math.random() * 100 + "vw";
+  el.style.fontSize = (14 + Math.random() * 15) + "px";
+  el.style.animationDuration = (4 + Math.random() * 4) + "s";
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 8500);
+}
+
+// Hàm tạo hoa mọc (nhảy) từ dưới lên
+function createSpringFlower() {
+  const el = document.createElement("div");
+  el.className = "spring-flower";
+  el.textContent = ["🌷", "🌻", "🌹", "🌺", "🌸", "🌼"][
+    Math.floor(Math.random() * 6)
+  ];
+  el.style.left = (Math.random() * 95 + 2) + "vw"; // Rải đều khắp chiều ngang màn hình
+  el.style.fontSize = (25 + Math.random() * 20) + "px"; // Kích thước ngẫu nhiên
+  
+  // Thời gian bung hoa ngẫu nhiên
+  const duration = 1.2 + Math.random() * 1.5;
+  el.style.animation = `springUp ${duration}s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards`;
+  
+  document.body.appendChild(el);
+  // Không xóa đi để tạo thành một "vườn hoa" ở viền dưới màn hình
+}
+</script>
+</body>
+</html>
